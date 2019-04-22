@@ -13,7 +13,7 @@ Python plugin for controlling foobar2000 through Launchy.
  - Put `foobar2000_64.png` into `[launchy_install_dir]/plugins/icons` directory.
  - Restart Launchy.
 
-##Usage
+## Usage
 Type `foo [command]` into Launchy, where recognized commands are:
  - *play*, *pl* or *y* for **play**,
  - *stop* or *s* for **stop**,
