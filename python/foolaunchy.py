@@ -27,6 +27,9 @@ class FooLaunchy(launchy.Plugin):
     
     PLUGIN_KEYWORD = 'foo '
     
+    BEEFWEB_HOST = 'localhost'
+    BEEFWEB_PORT = 8880
+    
     def __init__(self):
         launchy.Plugin.__init__(self)
         self.name = 'FooLaunchy'
@@ -53,9 +56,9 @@ class FooLaunchy(launchy.Plugin):
         if self.PLUGIN_KEYWORD == text[:4]:
             cmd = text[4:]
             cmdText = self.CMD_MAPPING[cmd] if cmd in self.CMD_MAPPING else '???'
-            resultsList.push_back( launchy.CatItem(text,
-                'foobar2000: ' + cmdText,
-                self.getID(), self.getIcon()) )
+            resultsList.push_back(  launchy.CatItem(text,
+                                    'foobar2000: ' + cmdText,
+                                    self.getID(), self.getIcon()) )
         
     def getCatalog(self, resultsList):
         pass
@@ -69,7 +72,7 @@ class FooLaunchy(launchy.Plugin):
             self.postFooBarAPICommand(self.REST_MAPPING[self.CMD_MAPPING[cmd]])
 
     def postFooBarAPICommand(self, apiCommand):
-        conn = httplib.HTTPConnection('localhost', 8880)
+        conn = httplib.HTTPConnection(self.BEEFWEB_HOST, self.BEEFWEB_PORT)
         req = conn.request('POST', apiCommand)
         conn.close()
         
