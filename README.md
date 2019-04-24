@@ -2,11 +2,10 @@
 Python plugin for controlling foobar2000 through Launchy.
 
 ## Requirements
- - [Python 2.7 32bit](https://www.python.org)
  - [foobar2000](https://www.foobar2000.org)
  - [foobar2000 beefweb web interface plugin](https://github.com/hyperblast/beefweb)
  - [Launchy](https://www.launchy.net/)
- - [Launchy PyLaunchy plugin](https://pylaunchy.sourceforge.io/docs/)
+ - [Launchy PyLaunchy plugin](https://pylaunchy.sourceforge.io/docs/) (requires [Python 2.7 32bit](https://www.python.org))
 
 ## Installation
  - Put `foolaunchy.py` into `[launchy_install_dir]/plugins/python` directory.
@@ -20,4 +19,8 @@ Type `foo [command]` into Launchy, where recognized commands are:
  - *pause* or *p* for **pause** and **unpause**,
  - *next* or *n* for **next** and
  - *previous*, *prev* or *pr* for **previous**.
- 
+
+## Additional Notes
+*FooLaunchy* plugin controls *foobar2000* by sending HTTP requests to [beefweb ReST API](https://hyperblast.org/beefweb/api/).
+It assumes, that beefweb ReST services are running on **localhost** and on their default port **8880**.
+If either hostname, port or both should be different, variables `BEEFWEB_HOST` and/or `BEEFWEB_PORT` should be emended accordingly in the `foolaunchy.py` script that is inside `[launchy_install_dir]/plugins/python` directory.
