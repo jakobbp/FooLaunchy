@@ -17,8 +17,11 @@ Type `foo [command]` into Launchy, where recognized commands are:
  - *play*, *pl* or *y* for **play**,
  - *stop* or *s* for **stop**,
  - *pause* or *p* for **pause** and **unpause**,
- - *next* or *n* for **next** and
- - *previous*, *prev* or *pr* for **previous**.
+ - *next* or *n* for **next**,
+ - *previous*, *prev* or *pr* for **previous**,
+ - *volume up*, *vup* or *vu* for **increasing volume by 2dB**,
+ - *volume down*, *vdn* or *vd* for **decreasing volume by 2dB** and
+ - *mute* or *m* for **muting** and **unmuting**.
 
 ## Additional Notes
 *FooLaunchy* plugin controls *foobar2000* by sending HTTP requests to [beefweb ReST API](https://hyperblast.org/beefweb/api/).
